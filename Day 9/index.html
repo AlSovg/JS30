@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Console Tricks!</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+    <script>
+      const dogs = [
+        { name: "Snickers", age: 2 },
+        { name: "hugo", age: 8 },
+      ];
+
+      function makeGreen() {
+        const p = document.querySelector("p");
+        p.style.color = "#BADA55";
+        p.style.fontSize = "50px";
+      }
+
+      // Regular
+      console.log("hello world!");
+      // Interpolated
+      console.log("Hello I am a %s string!", "💩");
+      // Styled
+      console.log(
+        "%c Some styled text",
+        "font-size:50px; background:red; text-shadow: 10px 10px 0 blue"
+      );
+      // warning!
+      console.warn("%c warning!", "color:red");
+      // Error :|
+      console.error("%c Error :|", "color:red");
+      // Info
+      console.info("%c Info", "color:blue");
+      // Testing
+      let p = document.querySelector("p");
+      console.assert(p.classList.contains("ouch"), "That is wrong!");
+      // clearing
+      console.clear();
+      // Viewing DOM Elements
+      console.log(p)
+      // Grouping together
+      dogs.forEach(dog => console.log(dog.name, dog.age));
+      // counting
+      console.count(1)
+      console.count(1)
+      console.countReset(1)
+      console.count(1)
+      // timing
+      fetch("https://dog.ceo/api/breeds/image/random"
+      ).then(response => response.blob()).then(blob => console.log(blob))
+    </script>
+  </body>
+</html>
